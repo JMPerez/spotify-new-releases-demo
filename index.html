@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify New Releases</title>
+    <link href="css/sp-bootstrap.min.css" rel="stylesheet" >
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-static-top navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <span class="navbar-logo">Spotify</span>
+            <span class="navbar-title">New Releases</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="starter-template">
+        <h1>What's new on Spotify</h1>
+        <p class="lead">These are the new Releases on Spotify.</p>
+      </div>
+
+      <!-- ko ifnot: isLoggedIn -->
+      <div id="login">
+        <div data-bind="if: loginErrorMessage">
+          <div class="alert alert-danger" data-bind="text: loginErrorMessage"></div>
+        </div>
+
+        <p>Login to find out the latest releases on Spotify in your country.</p>
+        <button id="login-button" class="btn btn-primary" data-bind="click: login">Log in with Spotify</button>
+      </div>
+      <!-- /ko -->
+
+      <!-- ko if: isLoggedIn -->
+      <div id="loggedin">
+
+        <ul class="albums" data-bind="foreach: albums">
+          <li class="thumbnail" data-bind="click: $parent.play, css: { active: isSelected }">
+            <div>
+              <img data-bind="attr: {src: images[1].url}">
+              <div class="overlay">Play</div>
+              <div class="caption">
+                <strong class="album-name"><span data-bind="text: name"></span></strong>
+                <span data-bind="with: artists[0]"><span data-bind="text: name"></span></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <button class="btn btn-primary" data-bind="click: loadNextPage">Load more</button>
+        <button id="login-button" class="btn" data-bind="click: logout">Log out</button>
+
+
+      </div>
+      <!-- /ko -->
+    </div>
+
+    <div id="footer">
+        <p>This is a demo of the Spotify's Web API <a href="https://developer.spotify.com/web-api/get-list-new-releases/">New Releases endpoint</a></p>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/knockout.js"></script>
+    <script src="js/spotify-web-api.js"></script>
+    <script src="js/oauth-config.js"></script>
+    <script src="js/oauth-manager.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
