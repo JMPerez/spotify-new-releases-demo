@@ -1,9 +1,14 @@
 Demo for New Releases Spotify Web API endpoint
 ===========
 
+This is a simple demo for the Spotify Web API [New Releases endpoint](https://developer.spotify.com/web-api/get-list-new-releases/).
+
 ## Usage
 
-Just start a server listening on port 8000. If you have python installed, you can run:
+If you want to run it locally, change the `redirectUri` variable in `js/oauth-config.js` to
+`http://localhost:8000`.
+
+Then, start a server listening on port 8000. If you have python installed, you can run:
 
     python -m SimpleHTTPServer 8000
 
