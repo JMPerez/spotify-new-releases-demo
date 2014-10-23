@@ -86,6 +86,10 @@
     spotifyApi.getMe().then(function(data) {
       viewModel.user(data);
       loadNextPage();
+    }).catch(function (e) {
+      if (e.status === 401) {
+        viewModel.logout();
+      }
     });
   }
 
