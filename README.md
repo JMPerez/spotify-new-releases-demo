@@ -1,7 +1,7 @@
 Demo for New Releases Spotify Web API endpoint
 ===========
 
-This is a simple demo for the Spotify Web API [New Releases endpoint](https://developer.spotify.com/web-api/get-list-new-releases/).
+This is a simple demo for the Spotify Web API [New Releases endpoint](https://developer.spotify.com/web-api/get-list-new-releases/). It is built using the [Spotify Web API JS wrapper](https://github.com/JMPerez/spotify-web-api-js) and [Knockout.js](http://knockoutjs.com/). A version using [React](http://facebook.github.io/react/) is available on [jmperez/spotify-new-releases-demo-react](https://github.com/JMPerez/spotify-new-releases-demo-react).
 
 ## Usage
 
